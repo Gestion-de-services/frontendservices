@@ -1,23 +1,23 @@
 package com.example.services_project.model;
 
 public class Service {
+    private int id;
     private String category;
     private String title;
     private String description;
-    private int iconResId; // ID de ressource drawable pour l'image
+    private int imageResId;
 
-    public Service(String category, String title, String description, int iconResId) {
+    public Service(int id, String category, String title, String description, int imageResId) {
+        this.id = id;
         this.category = category;
         this.title = title;
         this.description = description;
-        this.iconResId = iconResId;
+        this.imageResId = imageResId;
     }
 
-    // Getters
+    public int getId() { return id; }
     public String getCategory() { return category; }
     public String getTitle() { return title; }
     public String getDescription() { return description; }
-    public int getIconResId() { return iconResId; }
-
-    // Optionnel: Setters, toString(), etc.
+    public int getImageResId() { return imageResId; }
 }
