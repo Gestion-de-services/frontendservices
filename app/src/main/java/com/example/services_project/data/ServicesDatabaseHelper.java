@@ -22,15 +22,18 @@ public class ServicesDatabaseHelper extends SQLiteOpenHelper {
                 "category TEXT, " +
                 "title TEXT, " +
                 "description TEXT, " +
-                "imageResId INTEGER)");
+                "imageResId INTEGER, " +
+                "location TEXT, " +
+                "price TEXT, " +
+                "moreDetails TEXT)");
 
         // Données par défaut
-        db.execSQL("INSERT INTO services (category, title, description, imageResId) VALUES " +
-                "('COIFFURE', 'Coupe de Cheveux', 'Coupe de cheveux avec soins du cuir chevelu', " + R.drawable.ic_haircut + "), " +
-                "('PLOMBERIE', 'Réparation Évier', 'Réparation et entretien du système de plomberie pour un évier fonctionnel', " + R.drawable.ic_plumbing + "), " +
-                "('MÉNAGE', 'Massage Relaxant', 'Massage relaxant pour muscles endoloris', " + R.drawable.ic_massage + "), " +
-                "('ÉLECTRICIEN', 'Installation Éclairage', 'Installation d’éclairage électrique pour une belle ambiance', " + R.drawable.ic_electrician + "), " +
-                "('PÉDIATRIE', 'Consulting', 'Consultation avec un pédiatre qualifié', " + R.drawable.ic_pediatrics + ")");
+        db.execSQL("INSERT INTO services (category, title, description, imageResId, location, price, moreDetails) VALUES " +
+                "('COIFFURE', 'Coupe de Cheveux', 'Coupe de cheveux avec soins du cuir chevelu', " + R.drawable.ic_haircut + ", 'Salon Paris 12', '50€', 'Inclus shampoing et massage du cuir chevelu'), " +
+                "('PLOMBERIE', 'Réparation Évier', 'Réparation et entretien du système de plomberie pour un évier fonctionnel', " + R.drawable.ic_plumbing + ", 'Rue des Lilas, Lyon', '80€', 'Service rapide et garanti'), " +
+                "('MÉNAGE', 'Massage Relaxant', 'Massage relaxant pour muscles endoloris', " + R.drawable.ic_massage + ", 'Maison du client', '60€', 'Durée 1h, huile incluse'), " +
+                "('ÉLECTRICIEN', 'Installation Éclairage', 'Installation d’éclairage électrique pour une belle ambiance', " + R.drawable.ic_electrician + ", 'Appartement Marseille', '100€', 'Matériel fourni'), " +
+                "('PÉDIATRIE', 'Consultation', 'Consultation avec un pédiatre qualifié', " + R.drawable.ic_pediatrics + ", 'Clinique Nice', '70€', 'Première consultation, suivi inclus')");
     }
 
     @Override

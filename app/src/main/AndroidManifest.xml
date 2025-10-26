@@ -29,6 +29,12 @@
         <activity
             android:name=".ui.dashboard.DashboardActivity"
             android:exported="false" />
+
+        <!-- Activity pour les détails du service -->
+        <activity
+            android:name=".ui.dashboard.ServiceDetailActivity"
+            android:exported="false" />
+
     </application>
 
 </manifest>

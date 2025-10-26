@@ -1,6 +1,8 @@
 package com.example.services_project.model;
 
-public class Service {
+import java.io.Serializable;
+
+public class Service implements Serializable {
     private int id;
     private String category;
     private String title;
