@@ -2,61 +2,106 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
     android:background="#FFFFFF">
 
-    <LinearLayout
-        android:orientation="vertical"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <!-- Image du service -->
+        <!-- Flèche retour -->
         <ImageView
-            android:id="@+id/imageServiceDetail"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:scaleType="centerCrop"
-            android:layout_marginBottom="16dp"
-            android:src="@drawable/ic_launcher_background" />
+            android:id="@+id/buttonBack"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/ic_back"
+            android:layout_margin="12dp"
+            android:padding="4dp"
+            android:background="@drawable/circle_white"
+            android:elevation="4dp"
+            android:clickable="true"
+            android:focusable="true" />
 
-        <!-- Catégorie -->
-        <TextView
-            android:id="@+id/textCategoryDetail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Catégorie"
-            android:textStyle="bold"
-            android:textColor="#808080"
-            android:layout_marginBottom="8dp" />
-
-        <!-- Titre -->
-        <TextView
-            android:id="@+id/textTitleDetail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Titre du service"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="8dp" />
-
-        <!-- Description -->
-        <TextView
-            android:id="@+id/textDescriptionDetail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Description complète du service..."
-            android:layout_marginBottom="16dp" />
-
-        <!-- Bouton Postuler -->
-        <Button
-            android:id="@+id/buttonApply"
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Postuler"
-            android:backgroundTint="#6200EE"
-            android:textColor="#FFFFFF"
-            android:padding="12dp"
-            android:textAllCaps="false" />
+            android:layout_below="@id/buttonBack"
+            android:padding="16dp">
 
-    </LinearLayout>
+            <!-- Image du service -->
+            <ImageView
+                android:id="@+id/imageServiceDetail"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:scaleType="centerCrop"
+                android:layout_marginBottom="16dp"
+                android:src="@drawable/ic_launcher_background" />
+
+            <!-- Catégorie -->
+            <TextView
+                android:id="@+id/textCategoryDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Catégorie"
+                android:textStyle="bold"
+                android:textColor="#808080"
+                android:layout_marginBottom="6dp" />
+
+            <!-- Titre -->
+            <TextView
+                android:id="@+id/textTitleDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Titre du service"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Section détails -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Détails du service"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:layout_marginBottom="12dp"/>
+
+            <TextView
+                android:id="@+id/textDescriptionDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Description complète du service..."
+                android:layout_marginBottom="12dp" />
+
+
+
+            <TextView
+                android:id="@+id/textPriceDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tarif : 0,00 €"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:id="@+id/textLocationDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Localisation : Indéfinie"
+                android:layout_marginBottom="20dp"/>
+
+            <!-- Bouton Postuler -->
+            <Button
+                android:id="@+id/buttonApply"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Postuler"
+                android:backgroundTint="#6200EE"
+                android:textColor="#FFFFFF"
+                android:padding="12dp"
+                android:textAllCaps="false" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
 </ScrollView>

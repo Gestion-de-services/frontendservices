@@ -20,16 +20,24 @@ public class HomeFragmentRepository {
     public List<Service> getAllServices() {
         List<Service> list = new ArrayList<>();
         SQLiteDatabase db = dbHelper.getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT * FROM services", null);
+
+        // ✅ Récupération de toutes les colonnes
+        Cursor cursor = db.rawQuery(
+                "SELECT id, category, title, description, imageResId, location, price, moreDetails FROM services",
+                null
+        );
 
         if (cursor.moveToFirst()) {
             do {
                 list.add(new Service(
-                        cursor.getInt(0),
-                        cursor.getString(1),
-                        cursor.getString(2),
-                        cursor.getString(3),
-                        cursor.getInt(4)
+                        cursor.getInt(cursor.getColumnIndexOrThrow("id")),
+                        cursor.getString(cursor.getColumnIndexOrThrow("category")),
+                        cursor.getString(cursor.getColumnIndexOrThrow("title")),
+                        cursor.getString(cursor.getColumnIndexOrThrow("description")),
+                        cursor.getInt(cursor.getColumnIndexOrThrow("imageResId")),
+                        cursor.getString(cursor.getColumnIndexOrThrow("location")),
+                        cursor.getString(cursor.getColumnIndexOrThrow("price")),
+                        cursor.getString(cursor.getColumnIndexOrThrow("moreDetails"))
                 ));
             } while (cursor.moveToNext());
         }

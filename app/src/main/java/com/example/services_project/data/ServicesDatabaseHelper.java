@@ -9,7 +9,7 @@ import com.example.services_project.R;
 public class ServicesDatabaseHelper extends SQLiteOpenHelper {
 
     private static final String DB_NAME = "services_db";
-    private static final int DB_VERSION = 1;
+    private static final int DB_VERSION = 3;
 
     public ServicesDatabaseHelper(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
@@ -27,7 +27,6 @@ public class ServicesDatabaseHelper extends SQLiteOpenHelper {
                 "price TEXT, " +
                 "moreDetails TEXT)");
 
-        // Données par défaut
         db.execSQL("INSERT INTO services (category, title, description, imageResId, location, price, moreDetails) VALUES " +
                 "('COIFFURE', 'Coupe de Cheveux', 'Coupe de cheveux avec soins du cuir chevelu', " + R.drawable.ic_haircut + ", 'Salon Paris 12', '50€', 'Inclus shampoing et massage du cuir chevelu'), " +
                 "('PLOMBERIE', 'Réparation Évier', 'Réparation et entretien du système de plomberie pour un évier fonctionnel', " + R.drawable.ic_plumbing + ", 'Rue des Lilas, Lyon', '80€', 'Service rapide et garanti'), " +
