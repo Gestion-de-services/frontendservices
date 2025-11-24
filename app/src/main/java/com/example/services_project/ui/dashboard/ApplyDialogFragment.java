@@ -28,10 +28,8 @@ public class ApplyDialogFragment extends DialogFragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        // Inflater le layout correct
         View view = inflater.inflate(R.layout.dialog_apply_service, container, false);
-
-        // --- Récupération des vues ---
+        //  Récupération des vues
         editNom = view.findViewById(R.id.editNom);
         editPrenom = view.findViewById(R.id.editPrenom);
         editEmail = view.findViewById(R.id.editEmail);
@@ -42,10 +40,10 @@ public class ApplyDialogFragment extends DialogFragment {
         btnPostuler = view.findViewById(R.id.btnPostuler);
         btnClose = view.findViewById(R.id.btnClose);
 
-        // --- Fermer le modal ---
+        // Fermer le modal
         btnClose.setOnClickListener(v -> dismiss());
 
-        // --- DatePicker ---
+        // DatePicker
         editDate.setOnClickListener(v -> {
             final Calendar c = Calendar.getInstance();
             int year = c.get(Calendar.YEAR);
@@ -60,7 +58,7 @@ public class ApplyDialogFragment extends DialogFragment {
             datePickerDialog.show();
         });
 
-        // --- TimePicker ---
+        // TimePicker
         editHeure.setOnClickListener(v -> {
             final Calendar c = Calendar.getInstance();
             int hour = c.get(Calendar.HOUR_OF_DAY);
@@ -74,7 +72,7 @@ public class ApplyDialogFragment extends DialogFragment {
             timePickerDialog.show();
         });
 
-        // --- Bouton Postuler ---
+        //  Bouton Postuler
         btnPostuler.setOnClickListener(v -> {
             String nom = editNom.getText().toString().trim();
             String prenom = editPrenom.getText().toString().trim();
@@ -97,7 +95,6 @@ public class ApplyDialogFragment extends DialogFragment {
             }
         });
 
-        // --- Apparence du modal ---
         if (getDialog() != null && getDialog().getWindow() != null) {
             getDialog().getWindow().setBackgroundDrawableResource(android.R.color.transparent);
         }

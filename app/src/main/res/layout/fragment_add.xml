@@ -1,17 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
+    android:padding="16dp"
     android:background="@color/white">
 
-    <TextView
-        android:layout_width="220dp"
-        android:layout_height="23dp"
-        android:text="Page d'ajout (+)"
-        android:textColor="@color/purplePrimary"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-</LinearLayout>
+        <!-- Titre du formulaire -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ajouter un Service"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/purplePrimary"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Image sélectionnable -->
+        <ImageView
+            android:id="@+id/imgService"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/ic_haircut"
+            android:scaleType="centerCrop"
+            android:background="@drawable/rounded_image"
+            android:contentDescription="Image du service"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Champ Titre -->
+        <EditText
+            android:id="@+id/edtTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Titre"
+            android:padding="10dp"
+            android:background="@drawable/rounded_edittext"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Champ Description -->
+        <EditText
+            android:id="@+id/edtDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Description"
+            android:padding="10dp"
+            android:background="@drawable/rounded_edittext"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Champ Localisation -->
+        <EditText
+            android:id="@+id/edtLocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Localisation"
+            android:padding="10dp"
+            android:background="@drawable/rounded_edittext"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Champ Prix -->
+        <EditText
+            android:id="@+id/edtPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Prix"
+            android:padding="10dp"
+            android:background="@drawable/rounded_edittext"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Champ Détails supplémentaires -->
+        <EditText
+            android:id="@+id/edtMoreDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Détails supplémentaires"
+            android:padding="10dp"
+            android:background="@drawable/rounded_edittext"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Spinner catégorie -->
+        <Spinner
+            android:id="@+id/spinnerCategory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Bouton Ajouter -->
+        <Button
+            android:id="@+id/btnAddService"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ajouter"
+            android:backgroundTint="@color/purplePrimary"
+            android:textColor="@android:color/white" />
+
+    </LinearLayout>
+</ScrollView>

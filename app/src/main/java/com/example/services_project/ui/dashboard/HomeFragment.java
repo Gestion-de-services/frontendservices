@@ -1,22 +1,18 @@
 package com.example.services_project.ui.dashboard;
-
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
-
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.services_project.R;
 import com.example.services_project.model.Service;
 import com.example.services_project.ui.adapter.ServiceAdapter;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -46,12 +42,11 @@ public class HomeFragment extends Fragment {
         viewModel.getServices().observe(getViewLifecycleOwner(), services -> {
             allServices.clear();
             allServices.addAll(services);
-            // 🔹 Correction : passer le context au constructeur
             adapter = new ServiceAdapter(requireContext(), allServices);
             recyclerView.setAdapter(adapter);
         });
 
-        // 🔍 Recherche par mot-clé
+        //  Recherche par mot-clé
         searchBar.addTextChangedListener(new android.text.TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
@@ -65,13 +60,13 @@ public class HomeFragment extends Fragment {
             public void afterTextChanged(android.text.Editable s) {}
         });
 
-        // 🧩 Filtrage par catégorie
+        // Filtrage par catégorie
         filterIcon.setOnClickListener(v -> showFilterDialog());
 
         return root;
     }
 
-    // 🔹 Filtrer par texte
+    //  Filtrer par texte
     private void filterServicesByText(String query) {
         List<Service> filteredList = new ArrayList<>();
         for (Service s : allServices) {
@@ -84,9 +79,9 @@ public class HomeFragment extends Fragment {
         adapter.updateList(filteredList);
     }
 
-    // 🔹 Afficher la boîte de dialogue pour choisir une catégorie
+    //  Afficher la boîte de dialogue pour choisir une catégorie
     private void showFilterDialog() {
-        String[] categories = {"TOUS", "COIFFURE", "PLOMBERIE", "MÉNAGE", "ÉLECTRICIEN", "PÉDIATRIE"};
+        String[] categories = {"TOUS", "COIFFURE", "PLOMBERIE", "MASSAGE", "ÉLECTRICIEN", "PÉDIATRIE","INFORMATIQUE","DESIGN","CUISINE"};
 
         new AlertDialog.Builder(requireContext())
                 .setTitle("Filtrer par catégorie")

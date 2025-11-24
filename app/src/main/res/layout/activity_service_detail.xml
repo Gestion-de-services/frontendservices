@@ -10,7 +10,6 @@
         android:layout_height="wrap_content"
         android:gravity="center">
 
-        <!-- Flèche retour -->
         <ImageView
             android:id="@+id/buttonBack"
             android:layout_width="32dp"
@@ -33,7 +32,6 @@
             android:padding="20dp"
             android:gravity="center_horizontal">
 
-            <!-- Image du service -->
             <ImageView
                 android:id="@+id/imageServiceDetail"
                 android:layout_width="match_parent"
@@ -43,7 +41,6 @@
                 android:background="#EDEDED"
                 android:src="@drawable/ic_launcher_background" />
 
-            <!-- Catégorie -->
             <TextView
                 android:id="@+id/textCategoryDetail"
                 android:layout_width="wrap_content"
@@ -54,7 +51,6 @@
                 android:textSize="14sp"
                 android:layout_marginBottom="6dp" />
 
-            <!-- Titre -->
             <TextView
                 android:id="@+id/textTitleDetail"
                 android:layout_width="wrap_content"
@@ -66,7 +62,6 @@
                 android:layout_marginBottom="12dp"
                 android:gravity="center" />
 
-            <!-- Section détails -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -103,7 +98,6 @@
                 android:textColor="#222222"
                 android:layout_marginBottom="20dp" />
 
-            <!-- Bouton Postuler -->
             <Button
                 android:id="@+id/buttonApply"
                 android:layout_width="match_parent"

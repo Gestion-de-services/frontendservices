@@ -1,5 +1,4 @@
 package com.example.services_project.ui.adapter;
-
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -7,14 +6,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.services_project.R;
 import com.example.services_project.model.Service;
 import com.example.services_project.ui.dashboard.ServiceDetailActivity;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -45,10 +41,10 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.ServiceV
         holder.description.setText(service.getDescription());
         holder.image.setImageResource(service.getImageResId());
 
-        // 🔹 Ajouter le click listener pour ouvrir ServiceDetailActivity
+        // Pour ouvrir ServiceDetailActivity
         holder.itemView.setOnClickListener(v -> {
             Intent intent = new Intent(context, ServiceDetailActivity.class);
-            intent.putExtra("service", service); // Service doit être Serializable
+            intent.putExtra("service", service);
             context.startActivity(intent);
         });
     }

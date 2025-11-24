@@ -3,9 +3,7 @@ package com.example.services_project.ui.dashboard;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
-
 import android.os.Bundle;
-
 import com.example.services_project.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -27,8 +25,6 @@ public class DashboardActivity extends AppCompatActivity {
 
         // Initialisation du ViewModel
         viewModel = new ViewModelProvider(this).get(DashboardViewModel.class);
-
-        // Par défaut, afficher le fragment d'accueil
         replaceFragment(new HomeFragment());
 
         // Gestion des clics du menu avec if-else
@@ -53,9 +49,7 @@ public class DashboardActivity extends AppCompatActivity {
             return false;
         });
 
-        // Bouton flottant
         fabAdd.setOnClickListener(v -> {
-            // Exemple : afficher une page d'ajout aussi
             replaceFragment(new AddFragment());
         });
     }

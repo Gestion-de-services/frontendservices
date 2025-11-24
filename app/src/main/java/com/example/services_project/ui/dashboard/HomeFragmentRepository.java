@@ -1,5 +1,6 @@
 package com.example.services_project.ui.dashboard;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -11,17 +12,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class HomeFragmentRepository {
+
     private ServicesDatabaseHelper dbHelper;
 
     public HomeFragmentRepository(Context context) {
         dbHelper = new ServicesDatabaseHelper(context);
     }
 
+    // ----------------- Récupérer tous les services -----------------
     public List<Service> getAllServices() {
         List<Service> list = new ArrayList<>();
         SQLiteDatabase db = dbHelper.getReadableDatabase();
 
-        // ✅ Récupération de toutes les colonnes
         Cursor cursor = db.rawQuery(
                 "SELECT id, category, title, description, imageResId, location, price, moreDetails FROM services",
                 null
@@ -45,5 +47,21 @@ public class HomeFragmentRepository {
         cursor.close();
         db.close();
         return list;
+    }
+
+    // ----------------- Ajouter un nouveau service -----------------
+    public void insertService(Service service) {
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("category", service.getCategory());
+        values.put("title", service.getTitle());
+        values.put("description", service.getDescription());
+        values.put("imageResId", service.getImageResId());
+        values.put("location", service.getLocation());
+        values.put("price", service.getPrice());
+        values.put("moreDetails", service.getMoreDetails());
+
+        db.insert("services", null, values);
+        db.close();
     }
 }

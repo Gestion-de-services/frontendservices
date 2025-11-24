@@ -1,5 +1,4 @@
 package com.example.services_project.ui.dashboard;
-
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.TimePickerDialog;
@@ -9,12 +8,9 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.services_project.R;
 import com.example.services_project.model.Service;
-
 import java.util.Calendar;
 
 public class ServiceDetailActivity extends AppCompatActivity {
@@ -27,7 +23,6 @@ public class ServiceDetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_service_detail);
-
         // Récupération des vues
         buttonBack = findViewById(R.id.buttonBack);
         imageService = findViewById(R.id.imageServiceDetail);
